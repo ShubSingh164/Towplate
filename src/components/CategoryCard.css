@@ -1,0 +1,81 @@
+.category-card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 280px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.category-image {
+    position: absolute;
+    inset: 0;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.1);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+}
+
+.category-content {
+    position: relative;
+    padding: 1.5rem;
+    z-index: 1;
+    flex: 1;
+}
+
+.category-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.25rem;
+}
+
+.category-count {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+}
+
+.category-arrow {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-normal);
+    z-index: 1;
+}
+
+.category-arrow svg {
+    width: 20px;
+    height: 20px;
+    color: var(--text-white);
+    transition: transform var(--transition-fast);
+}
+
+.category-card:hover .category-arrow {
+    background: var(--primary-500);
+}
+
+.category-card:hover .category-arrow svg {
+    transform: translateX(4px);
+}
